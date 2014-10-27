@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.felixaa.fest_bong.LoginActivity"
+    android:background="@drawable/fest_background">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:hint="Brukernavn"
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/brukernavn"
+        android:layout_marginTop="40dp"
+        android:elevation="2dp"
+        android:background="@drawable/myrect"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:hint="Passord"
+        android:ems="10"
+        android:id="@+id/passord"
+        android:background="@drawable/myrect"
+        android:elevation="2dp"
+        android:layout_below="@+id/brukernavn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="10dp" />
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGG PÅ"
+        android:onClick="loginCheck"
+        android:id="@+id/login_button"
+        android:background="@drawable/ripple"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
