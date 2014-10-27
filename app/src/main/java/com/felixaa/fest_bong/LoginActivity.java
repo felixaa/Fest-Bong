@@ -29,6 +29,7 @@ import java.util.List;
 
 /**
  * Created by Chris on 10/2/2014.
+ * Vil ikke fungere når man trykker LOG in, fortsatt manglende funksjon
  */
 public class LoginActivity extends Activity implements OnClickListener{
 
