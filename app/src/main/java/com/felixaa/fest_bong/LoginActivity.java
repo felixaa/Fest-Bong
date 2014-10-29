@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,7 +24,9 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +39,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 
     EditText username, password;
     Button login;
-    HttpResponse response;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,10 +67,14 @@ public class LoginActivity extends Activity implements OnClickListener{
     public void getResult(String result) {
         try {
             JSONObject jsob = new JSONObject(result);
-            String error = jsob.getString("error").toString();
-            if (error.equals("false")) {
+            Boolean error = jsob.getBoolean("error");
+            if (!error) {
+                Log.v("KOMMER JEG HIT?", "jamann");
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
+            }
+            else {
+                Toast.makeText(this, "Invalid user information", Toast.LENGTH_SHORT).show();
             }
 
         }catch (JSONException e) {
@@ -79,32 +86,38 @@ public class LoginActivity extends Activity implements OnClickListener{
 
 
 
-    private class AsyncLogin extends AsyncTask<String, String, String> {
+    private class AsyncLogin extends AsyncTask<String,Void, String> {
 
-        public String resultat;
+        String result11 = null;
+        private ProgressDialog progress;
+
+        protected void onPreExecute(){
+
+            progress = new ProgressDialog(LoginActivity.this);
+            progress.setMessage("Loading...");
+            progress.show();
+        }
 
         protected String doInBackground(String... params) {
             postLogin(params[0], params[1]);
-            return null;
+            return result11;
         }
 
 
         protected void onPostExecute(String result){
-            Toast.makeText(getApplicationContext(), "command sent", Toast.LENGTH_LONG).show();
+            if (progress.isShowing()) {
+                progress.dismiss();
+            }
             getResult(result);
         }
 
 
-        protected void onProgressUpdate(String... progresjon){
-            ProgressDialog progress;
-            progress = new ProgressDialog(getApplicationContext());
-            progress.setMessage("Loading...");
-            progress.show();
-        }
-        public void postLogin(String email, String passord) {
+
+        public String postLogin(String email, String passord) {
             // Lager en ny Http klient og en post header.
             HttpClient httpClient = new DefaultHttpClient();
             HttpPost httpPost = new HttpPost("http://chris-felixaa.no/api/v1/login");
+
 
             try {
                 // Adding data
@@ -114,7 +127,19 @@ public class LoginActivity extends Activity implements OnClickListener{
                 httpPost.setEntity(new UrlEncodedFormEntity(valuePairs));
 
                 // Utfører http post kallet
-                response = httpClient.execute(httpPost);
+                HttpResponse response = httpClient.execute(httpPost);
+
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "iso-8859-1"), 8);
+                StringBuilder sb = new StringBuilder();
+                sb.append(reader.readLine() + "\n");
+                String line = "0";
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line + "\n");
+                }
+                reader.close();
+
+                result11 = sb.toString();
 
 
 
@@ -123,6 +148,7 @@ public class LoginActivity extends Activity implements OnClickListener{
             }catch (IOException e) {
 
             }
+            return result11;
         }
 
     }
