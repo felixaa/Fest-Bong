@@ -34,7 +34,8 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int login=0x7f030001;
+        public static final int activity_reg=0x7f030001;
+        public static final int login=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -43,6 +44,7 @@ public final class R {
         public static final int action_settings=0x7f060000;
         public static final int app_name=0x7f060001;
         public static final int hello_world=0x7f060002;
+        public static final int sign_up=0x7f060003;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

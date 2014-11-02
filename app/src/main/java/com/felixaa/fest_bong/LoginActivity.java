@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -95,6 +96,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 
             progress = new ProgressDialog(LoginActivity.this);
             progress.setMessage("Loading...");
+            progress.setTitle("Logging in");
             progress.show();
         }
 
@@ -119,6 +121,7 @@ public class LoginActivity extends Activity implements OnClickListener{
             HttpPost httpPost = new HttpPost("http://chris-felixaa.no/api/v1/login");
 
 
+
             try {
                 // Adding data
                 List<NameValuePair> valuePairs = new ArrayList<NameValuePair>(2);
@@ -128,19 +131,24 @@ public class LoginActivity extends Activity implements OnClickListener{
 
                 // Utfører http post kallet
                 HttpResponse response = httpClient.execute(httpPost);
+                StatusLine statusLine = response.getStatusLine();
+                int statusCode = statusLine.getStatusCode();
 
+                if (statusCode == 200) {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "iso-8859-1"), 8);
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(reader.readLine() + "\n");
+                    String line = "0";
+                    while ((line = reader.readLine()) != null) {
+                        sb.append(line + "\n");
+                    }
+                    reader.close();
 
-                BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "iso-8859-1"), 8);
-                StringBuilder sb = new StringBuilder();
-                sb.append(reader.readLine() + "\n");
-                String line = "0";
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line + "\n");
+                    result11 = sb.toString();
                 }
-                reader.close();
-
-                result11 = sb.toString();
-
+                else {
+                    Log.e("HTTP: ", "Failed");
+                }
 
 
             } catch (ClientProtocolException e) {
