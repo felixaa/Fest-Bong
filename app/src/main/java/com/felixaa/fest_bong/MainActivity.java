@@ -2,17 +2,45 @@ package com.felixaa.fest_bong;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends Activity {
+    FestivalInfo festInfozzz;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
+
+
+        List<FestivalInfo> festtivalList = new ArrayList<FestivalInfo>();
+
+
+        FestivalAdapter adapter = new FestivalAdapter(festtivalList);
+        recList.setAdapter(adapter);
+
+
+
+
+        recList.setHasFixedSize(true);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        recList.setLayoutManager(llm);
+
+
+
     }
+
+
 
 
     @Override
