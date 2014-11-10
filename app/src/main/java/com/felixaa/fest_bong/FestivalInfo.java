@@ -6,6 +6,10 @@ package com.felixaa.fest_bong;
 public class FestivalInfo {
     protected String festName;
     protected String festInfo;
-    protected static final String FESTNAME_PREFIX = "ROSKILDE_";
-    protected static final String FESTINFO_PREFIX = "Supertt";
+
+    protected static final String NAME_PREFIX = "FESTIVAL_";
+    protected static final String INFO_PREFIX = "INFO OM FESTIVAL_";
+
+//
+
 }

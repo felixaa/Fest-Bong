@@ -12,7 +12,8 @@ import java.util.List;
 
 
 public class MainActivity extends Activity {
-    FestivalInfo festInfozzz;
+    public List<FestivalInfo> festtInfozz;
+
 
 
     @Override
@@ -20,17 +21,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
-
-
-        List<FestivalInfo> festtivalList = new ArrayList<FestivalInfo>();
-
-
-        FestivalAdapter adapter = new FestivalAdapter(festtivalList);
+        FestivalAdapter adapter = new FestivalAdapter(createList(3));
         recList.setAdapter(adapter);
-
-
-
-
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
@@ -60,5 +52,21 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private List<FestivalInfo> createList(int size) {
+
+        List<FestivalInfo> result = new ArrayList<FestivalInfo>();
+        for (int i=1; i <= size; i++) {
+            FestivalInfo ci = new FestivalInfo();
+            ci.festName = FestivalInfo.NAME_PREFIX + i;
+            ci.festInfo = FestivalInfo.INFO_PREFIX + i;
+
+
+            result.add(ci);
+
+        }
+
+        return result;
     }
 }
