@@ -40,6 +40,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 
     EditText username, password;
     Button login;
+    Button reg;
 
 
     @Override
@@ -54,11 +55,17 @@ public class LoginActivity extends Activity implements OnClickListener{
 
         login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(this);
+        reg = (Button) findViewById(R.id.reg_button);
+        reg.setOnClickListener(this);
     }
 
     public void onClick(View v) {
-        if (username.getText().toString().length()<1) {
+        if (v == login && username.getText().toString().length()<1) {
             Toast.makeText(this, "Please enter a valid email-address", Toast.LENGTH_SHORT).show();
+        }
+        else if (v == reg) {
+            Intent r = new Intent(this, RegActivity.class);
+            startActivity(r);
         }
         else {
             new AsyncLogin().execute(username.getText().toString(), password.getText().toString());

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:inputType="textPersonName"
-        android:hint="Brukernavn"
+        android:hint="Email"
         android:gravity="center"
         android:ems="10"
         android:id="@+id/brukernavn"
@@ -41,14 +41,7 @@
         android:layout_alignParentRight="false"
         android:layout_marginTop="10dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:text="@string/sign_up"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/passord"
-        android:gravity="center"
-        android:layout_centerVertical="true"
-        />
+
 
     <Button
 
@@ -58,6 +51,20 @@
         android:onClick="loginCheck"
         android:id="@+id/login_button"
         android:background="@drawable/ripple"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_button"
+        android:text="Registrer"
+        android:onClick="loginCheck"
+        android:id="@+id/reg_button"
+        android:background="@drawable/mybutton"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"/>
