@@ -21,13 +21,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
-        FestivalAdapter adapter = new FestivalAdapter(createList(3));
+        FestivalAdapter adapter = new FestivalAdapter(createList(4));
         recList.setAdapter(adapter);
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
-
 
 
     }
