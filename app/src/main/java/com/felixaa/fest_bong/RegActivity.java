@@ -142,6 +142,20 @@ public class RegActivity extends Activity implements View.OnClickListener {
 
                     result11 = sb.toString();
                 }
+
+                else if (statusCode == 400)  {
+                    BufferedReader ureader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(),"iso-8859-1"), 8);
+                    StringBuilder sbu = new StringBuilder();
+                    sbu.append(ureader.readLine() + "\n");
+                    String line = "0";
+                    while ((line = ureader.readLine())  != null)  {
+                        sbu.append(line + "\n");
+                    }
+                    ureader.close();
+
+                    result11 = sbu.toString();
+                }
+
                 else {
                     Log.e("HTTP: ", "Failed");
                 }
