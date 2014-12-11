@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\pre-dexed\debug\classes-d1e1de987cd8926e615ef17680861d734943f789.jar"
-        jar="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
+        jar="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\pre-dexed\debug\classes-1630f7d21e7e17c56e0bc6b25edc86302dda2c79.jar" />
+    </item>
     <item
-        dex="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\pre-dexed\debug\classes-506262aa0d9c19d05bfa5aa014fabd9de2da5764.jar"
-        jar="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.0\classes.jar"
+        jar="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="7d2525cba8ed61fff102977caed964fc22061e34"/>
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\pre-dexed\debug\classes-f2fa520bdf5c7516edd0a34f668a49e04d6c216e.jar" />
+    </item>
     <item
-        dex="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-d22ff84cb1ba42d83df01f9c15bd37f2d3d3e341.jar"
-        jar="C:\Users\Chris\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jar="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
+        sha1="7d2525cba8ed61fff102977caed964fc22061e34">
+        <dex dex="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\pre-dexed\debug\classes-4db6d45a2a2fa555f7c8e77c3caf3af514165553.jar" />
+    </item>
     <item
-        dex="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\pre-dexed\debug\classes-1c3baf18d8326841ba46dc4c46a10e80b512df59.jar"
-        jar="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.0\classes.jar"
+        jar="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2"/>
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-149a692cd0fdaaab2de0e529ea107bc216e7425b.jar" />
+    </item>
     <item
-        dex="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-91d9af76530608fac4c6b4bde6cb7d67fe8ae352.jar"
-        jar="C:\Users\Chris\AndroidstudioProjects\Fest-Bong\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
+        jar="C:\Users\Chris\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="C:\Users\Chris\workspace\Fest-Bong\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-fad91d065b836fa1ded5c693361e5e79516c7c1c.jar" />
+    </item>
 
-</pre-dex-items>
+</items>

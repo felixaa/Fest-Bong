@@ -6,14 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends Activity {
-    public List<FestivalInfo> festtInfozz;
-
 
 
     @Override
@@ -22,12 +21,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         FestivalAdapter adapter = new FestivalAdapter(createList(4));
+
         recList.setAdapter(adapter);
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
-
 
     }
 
