@@ -37,8 +37,7 @@
         <ImageView
             android:id="@+id/barcode"
             android:layout_width="100dp"
-            android:layout_height="100"
-            android:background="@drawable/myrect"
+            android:layout_height="100dp"
             android:layout_gravity="right|center_vertical"
             android:layout_marginRight="15dp"
             android:src="@drawable/qrcode"
